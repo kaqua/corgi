@@ -1,0 +1,14 @@
+name: Manual
+on:
+  workflow_dispatch:                     # 手動実行イベント
+    inputs:
+      breed:                             # パラメータ名
+        type: string                     # 型
+        default: Mike                    # デフォルト値
+        required: true                   # 必須フラグ
+        description: input breed         # 説明
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - run: My favorite dog is "${{ inputs.breed }}"
