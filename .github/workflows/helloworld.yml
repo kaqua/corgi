@@ -6,4 +6,3 @@ jobs:                             # ジョブの定義
     runs-on: ubuntu-latest        # 実行環境
     steps:                        # ステップの定義
       - run: echo "Hello World"   # シェルコマンドの実行
-      - uses: actions/checkout@v4 # アクションの呼び出し
