@@ -4,7 +4,7 @@ on:
     inputs:
       breed:                             # パラメータ名
         type: string                     # 型
-        default: Mike                    # デフォルト値
+        default: "Border Collie"         # デフォルト値
         required: true                   # 必須フラグ
         description: input breed         # 説明
 jobs:
