@@ -2,14 +2,15 @@ name: GITHUB_OUTPUT and GITHUB_ENV
 on: push
 jobs:
   var_share:
-  steps:
-    - id: share
-      run: echo "SHARE_VAR=hogehoge" >> "${GITHUB_OUTPUT}"
-    - name: id share output
-      env: RESULT=${{ steps.share.outputs.SHARE_VAR }}
-      run: echo "${RESULT}"
-    - name: set
-      run: echo "SHARE_VAR=hogehogehogehoge" >> "${GITHUB_ENV}"
-    - name: no id output
-      env: RESULT=${{ steps.outputs.SHARE_VAR }}
-      run: echo "${RESULT}"
+    steps:
+      - name: GITHUB_OUTPUT set step
+        id: share
+        run: echo "SHARE_VAR=hogehoge" >> "${GITHUB_OUTPUT}"
+      - name: GITHUB_OUTPUT output step
+        env: RESULT=${{ steps.share.outputs.SHARE_VAR }}
+        run: echo "${RESULT}"
+      - name: GITHUB_ENV set step
+        run: echo "SHARE_VAR=hogehogehogehoge" >> "${GITHUB_ENV}"
+      - name: GITHUB_ENV output step
+        env: RESULT=${{ steps.outputs.SHARE_VAR }}
+        run: echo "${RESULT}"
