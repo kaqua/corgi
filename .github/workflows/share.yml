@@ -3,14 +3,13 @@ on: push
 jobs:
   var_share:
   steps:
-    - name: set 
-      id: share
+    - id: share
       run: echo "SHARE_VAR=hogehoge" >> "${GITHUB_OUTPUT}"
-    - name: output
+    - name: id share output
       env: RESULT=${{ steps.share.outputs.SHARE_VAR }}
       run: echo "${RESULT}"
-    - name: set step
+    - name: set
       run: echo "SHARE_VAR=hogehogehogehoge" >> "${GITHUB_ENV}"
-    - name: output step
+    - name: no id output
       env: RESULT=${{ steps.outputs.SHARE_VAR }}
       run: echo "${RESULT}"
