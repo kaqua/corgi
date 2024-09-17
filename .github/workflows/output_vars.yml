@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       PASSWORD: ${{ secrets.PASSW0RD }}
-      VARIABLE: ${{ variables.VAR_01 }}
+      VARIABLE: ${{ vars.VAR_01 }}
     steps:
       - name: Output secrets
         run: echo "${PASSWORD}"
