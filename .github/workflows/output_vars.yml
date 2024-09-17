@@ -1,0 +1,13 @@
+name: Variables and Secrets
+on: push
+jobs:
+  output:
+    runs-on: ubuntu-latest
+    env:
+      PASSWORD: ${{ secrets.PASSW0RD }}
+      VARIABLE: ${{ variables.VAR_01 }}
+    steps:
+      - name: Output secrets
+        run: echo "${PASSWORD}"
+      - name: Output variables
+        run: echo "${VARIABLE}"
