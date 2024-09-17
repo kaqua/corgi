@@ -2,7 +2,7 @@ name: GITHUB_OUTPUT and GITHUB_ENV
 on: push
 jobs:
   var_share:
-    runs-on:ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: GITHUB_OUTPUT set step
         id: share
